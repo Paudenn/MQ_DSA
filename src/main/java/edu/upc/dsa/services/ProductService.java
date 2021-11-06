@@ -74,7 +74,7 @@ public class ProductService {
 
     public Response doOrder(Order order) {
         Order order2 = new Order(this.scenario.getUser(order.user.getName()));
-        if (order2.getUser() == null) return Response.status(500).entity(order).build(); // solo funciona con usuarios ya establecido mas arriba!
+        if (order2.getUser() == null) return Response.status(500).entity(order).build(); // solo funciona con usuarios ya establecido mas arriba!!
         this.scenario.doOrder(order2);
         return Response.status(201).entity(order).build();
     }
