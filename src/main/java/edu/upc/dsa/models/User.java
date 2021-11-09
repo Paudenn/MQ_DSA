@@ -4,20 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class User {
-    public String name;
-    public String id;
-    public List<Order> orderList;
+    String name;
+    String id;
+    int numPlaces = 0;
+    List<Place> placeList;
 
 
-    public User(String name, List<Order> orderList,String id) {
+    public User(String name, List<Place> placeList,String id) {
         this.name = name;
-        this.orderList = orderList;
+        this.placeList = placeList;
         this.id = id;
     }
     public User(String name, String id) {
         this.name = name;
         this.id = id;
-        orderList = new ArrayList<>();
+        placeList = new ArrayList<>();
     }
     public User(){}
 
@@ -29,13 +30,37 @@ public class User {
         this.name = name;
     }
 
-    public List<Order> getOrderList() {
-        return orderList;
+    public String getId() {
+        return id;
     }
 
-
-    public void setOrderList(List<Order> orderList) {
-        this.orderList = orderList;
+    public void setId(String id) {
+        this.id = id;
     }
 
+    public int getNumPlaces() {
+        return numPlaces;
+    }
+
+    public void setNumPlaces(int numPlaces) {
+        this.numPlaces = numPlaces;
+    }
+
+    public List<Place> getPlaceList() {
+        return placeList;
+    }
+
+    public void setPlaceList(List<Place> placeList) {
+        this.placeList = placeList;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", id='" + id + '\'' +
+                ", numPlaces=" + numPlaces +
+                ", placeList=" + placeList +
+                '}';
+    }
 }

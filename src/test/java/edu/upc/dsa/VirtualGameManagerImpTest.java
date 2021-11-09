@@ -9,15 +9,15 @@ import org.junit.Test;
 import java.util.List;
 
 
-public class ProductManagerImpTest {
-    ProductManager scenario;
-
+public class VirtualGameManagerImpTest {
+    VirtualGameManager scenario;
 
 
     @Before
     public void setUp() {
 
-        scenario = ProductManagerImpl.getInstance();
+        scenario = VirtualGameManagerImpl.getInstance();
+        /*
         scenario.addProduct(new Product("agua", 2, 10));
         scenario.addProduct(new Product("llet", 2, 5));
         scenario.addProduct(new Product("pa", 0.5, 15));
@@ -26,25 +26,46 @@ public class ProductManagerImpTest {
         scenario.addProduct(new Product("cafe",5.0,18));
         scenario.addProduct(new Product("bocata",6.4,13));
 
-        scenario.addUser("Pau","321");
-        Order fisrtOrder = new Order(scenario.getUser("Pau"));
+         */
+            /*Order fisrtOrder = new Order(scenario.getUser("Pau"));
         fisrtOrder.addLP(new Product("pa",0.5,4));
         scenario.doOrder(fisrtOrder);
+         */
+        scenario.addPlace("Tokio");
+        scenario.addPlace("Paris");
+        scenario.addPlace("Roma");
+        scenario.addPlace("Stambul");
+        scenario.addUser("Pau", "321");
+        scenario.addUser("Laura", "123");
+        scenario.addUser("Alba", "213");
+       // PassPlace placeSeen = new PassPlace(scenario.getUser("Pau"));
+
+       // placeSeen.addP(new Place("Tokio", "Pau"));
+       // scenario.placeSeenByUser(placeSeen);
     }
 
     @After
     public void tearDown() {
-        scenario.getOrdersList().clear();
-        scenario.getProductsList().clear();
+        scenario.clear();
 
     }
 
+    @Test
+    public void usersListByID() {
+        scenario = VirtualGameManagerImpl.getInstance();
+        scenario.addUser("Pablo","111");
+        List<User> userList = scenario.getUsersByID();
+    }
 
-
+    @Test
+    public void showUserInfo() {
+        User user = scenario.showUserInfo("Pau");
+    }
+/*
     @Test
     public void testShowProductsByPrice(){
         Assert.assertEquals(7,scenario.getNumProducts());
-        scenario = ProductManagerImpl.getInstance();
+        scenario = VirtualGameManagerImpl.getInstance();
         scenario.addProduct(new Product("agua", 1, 10));
         scenario.addProduct(new Product("llet", 2, 5));
         scenario.addProduct(new Product("pa", 0.5, 15));
@@ -89,4 +110,7 @@ public class ProductManagerImpTest {
     }
 
 
-}
+ */
+
+    }
+
