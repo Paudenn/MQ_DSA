@@ -42,7 +42,7 @@ public class VirtualGameManagerImpl implements VirtualGameManager {
     }
 
     @Override
-    public List<User> getUsersByID() {
+    public List<User> getUsersByName() {
         logger.info("Users list before: " + usersList.toString());
         Collections.sort(usersList, new Comparator<User>() {
 

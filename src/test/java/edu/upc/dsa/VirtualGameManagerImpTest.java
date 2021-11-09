@@ -51,10 +51,10 @@ public class VirtualGameManagerImpTest {
     }
 
     @Test
-    public void usersListByID() {
+    public void usersListByName() {
         scenario = VirtualGameManagerImpl.getInstance();
         scenario.addUser("Pablo","111");
-        List<User> userList = scenario.getUsersByID();
+        List<User> userList = scenario.getUsersByName();
     }
 
     @Test

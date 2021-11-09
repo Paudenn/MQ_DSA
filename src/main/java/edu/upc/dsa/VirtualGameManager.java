@@ -10,7 +10,7 @@ public interface VirtualGameManager {
 
 
 
-    List<User> getUsersByID();
+    List<User> getUsersByName();
     User showUserInfo (String name);
     void placeSeenByUser(PassPlace passPlace);
     List<Place> allPlacesSeenByUser(String name);
